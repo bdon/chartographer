@@ -52,7 +52,9 @@
       selectedTab = 'fill';
     }
 
-    if (loadDefaultStyle) {
+    if (query.style) {
+      loadStyleUrl(query.style);
+    } else if (loadDefaultStyle) {
       loadStyleUrl('./style.json');
     }
   });
