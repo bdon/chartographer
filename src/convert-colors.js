@@ -1,9 +1,9 @@
 // Converts all color values in stylesheet to RGB
 import Color from 'color';
 import { latest } from '@mapbox/mapbox-gl-style-spec';
-import mapboxGlStyleRecurse from 'mapbox-gl-style-recurse';
+// import mapboxGlStyleRecurse from 'mapbox-gl-style-recurse';
 
-const createRecurseStyle = mapboxGlStyleRecurse.createRecurseStyle;
+// const createRecurseStyle = mapboxGlStyleRecurse.createRecurseStyle;
 
 // Color properties from the style spec in case new ones are added
 const convertToRgbPropertyIds = Object.keys(latest).reduce((acc, k) => {
@@ -59,11 +59,9 @@ const convertToRgbCondition = (val, key) => {
   return true;
 };
 
-const convertStylesheetToRgb = createRecurseStyle({
-  transformFn: convertToRgb,
-  transformCondition: convertToRgbCondition,
-  propertyIds: convertToRgbPropertyIds,
-});
+const convertStylesheetToRgb = a => {
+  return a;
+};
 
 export {
   convertStylesheetToRgb,
